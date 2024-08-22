@@ -21,6 +21,15 @@ public class User {
     private String username;
     private String password;
 
+    private String email;
+    private String phone;
+    private String address;
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Novel> novels;
+
+
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private List<Novel> novels;
 }

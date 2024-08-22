@@ -1,6 +1,7 @@
 package com.example.sujanproject.Entity;
 
 import com.example.sujanproject.Entity.Novel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,6 +26,7 @@ public class Chapter {
 
     @ManyToOne
     @JoinColumn(name = "novel_id", nullable = false)
+    @JsonIgnore
     private Novel novel;
 
     @PrePersist
